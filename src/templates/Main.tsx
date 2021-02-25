@@ -125,11 +125,19 @@ const Main = (props: IMainProps) => {
       </div>
 
       <div className="border-t shadow-md mt-auto text-white border-gray-300 bg-gradient-to-t from-gray-900 via-gray-800 to-gray-700 text-center py-4   text-sm">
-        © Copyright {new Date().getFullYear()} {Config.title}. Mantido com{' '}
+        © Copyright
+        {' '}
+        {new Date().getFullYear()}
+        {' '}
+        {Config.title}
+        . Mantido com
+        {' '}
         <span role="img" aria-label="Love">
           ♥
-        </span>{' '}
-        por{' '}
+        </span>
+        {' '}
+        por
+        {' '}
         <a href="https://github.com/PauloDavi" target="_blank" rel="noreferrer">
           Paulo Davi
         </a>
