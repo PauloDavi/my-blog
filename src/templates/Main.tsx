@@ -108,7 +108,7 @@ const Main = (props: IMainProps) => {
                 <h2 className="text-lg font-bold mb-4">Últimos Posts</h2>
                 <ul>
                   {props.posts?.slice(0, 5).map((post, index) => (
-                    <li className={clsx(index !== 0 && 'mt-2')}>
+                    <li key={post.slug} className={clsx(index !== 0 && 'mt-2')}>
                       <Link href="/posts/[slug]" as={`/posts/${post.slug}`}>
                         <a>{post.title}</a>
                       </Link>
@@ -125,19 +125,11 @@ const Main = (props: IMainProps) => {
       </div>
 
       <div className="border-t shadow-md mt-auto text-white border-gray-300 bg-gradient-to-t from-gray-900 via-gray-800 to-gray-700 text-center py-4   text-sm">
-        © Copyright
-        {' '}
-        {new Date().getFullYear()}
-        {' '}
-        {Config.title}
-        . Mantido com
-        {' '}
+        © Copyright {new Date().getFullYear()} {Config.title}. Mantido com{' '}
         <span role="img" aria-label="Love">
           ♥
-        </span>
-        {' '}
-        por
-        {' '}
+        </span>{' '}
+        por{' '}
         <a href="https://github.com/PauloDavi" target="_blank" rel="noreferrer">
           Paulo Davi
         </a>
