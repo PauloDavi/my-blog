@@ -28,7 +28,11 @@ const Main = (props: IMainProps) => {
       <div className="text-white shadow-lg border-b border-gray-300">
         <div className="bg-gradient-to-b from-blue-600 via-blue-500 to-blue-400 flex flex-row items-center py-4 px-4 sm:px-10">
           <div
-            className="bg-white invisible md:visible flex items-center justify-center"
+            className="flex items-center justify-center border-white border-2"
+            onClick={() => router.push('/')}
+            role="button"
+            tabIndex={0}
+            onKeyPress={(e) => e.key === 'Enter' && router.push('/')}
             style={{
               width: 82,
               height: 82,
@@ -37,13 +41,23 @@ const Main = (props: IMainProps) => {
           >
             <Image src="/QG-icon.png" quality={100} priority width={80} height={80} alt="logo" />
           </div>
-          <HiOutlineArrowNarrowLeft
-            data-tip="Voltar"
-            onClick={() => router.back()}
-            className="-ml-10 sm:-ml-16 md:ml-5 cursor-pointer"
-            size={40}
-          />
-          <ReactTooltip place="bottom" />
+          {router.pathname !== '/' && (
+            <>
+              <HiOutlineArrowNarrowLeft
+                data-tip="Voltar"
+                onClick={() => router.back()}
+                className="-ml-10 sm:-ml-16 md:ml-5 cursor-pointer"
+                size={40}
+              />
+              <ReactTooltip
+                type="dark"
+                delayShow={100}
+                delayHide={200}
+                effect="solid"
+                place="bottom"
+              />
+            </>
+          )}
           <div className="ml-3">
             <div className="font-semibold text-3xl mx-auto sm:mx-0">{Config.title}</div>
             <div className="text-xl">{Config.description}</div>

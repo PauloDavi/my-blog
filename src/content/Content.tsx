@@ -14,6 +14,11 @@ const Content = (props: IContentProps) => (
           @apply my-6;
         }
 
+        .content :global(p code) {
+          @apply px-2 py-1 bg-gray-800 text-white rounded;
+          background: #2b2b2b;
+        }
+
         .content :global(ul) {
           @apply my-6;
         }
